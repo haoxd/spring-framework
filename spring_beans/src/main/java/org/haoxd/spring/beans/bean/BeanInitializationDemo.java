@@ -42,7 +42,7 @@ public class BeanInitializationDemo {
     }
 
 
-    @Bean(initMethod = "initDefaultPersonFactory")
+    @Bean(initMethod = "initDefaultPersonFactory" ,destroyMethod = "doDestroy")
     public PersonFactory personFactory() {
 
         return new DefaultPersonFactory();

@@ -2,6 +2,7 @@ package org.haoxd.spring.beans.factory;
 
 import org.haoxd.spring.beans.bean.Person;
 import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * @Description:
@@ -25,4 +26,5 @@ public class PersonFactoryBean implements FactoryBean {
     public boolean isSingleton() {
         return true;
     }
+
 }
