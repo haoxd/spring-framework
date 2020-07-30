@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--静态方法实例化构造-->
+    <bean id="user-static-method" class="org.haoxd.spring.beans.bean.Person"
+          factory-method="createPerson" />
+
+    <!--bean 的实例方法构造-->
+    <bean id="user-init-method" factory-bean="defaultPersonFactory"
+          factory-method="createPerson" />
+
+
+
+    <bean id="defaultPersonFactory" class="org.haoxd.spring.beans.factory.DefaultPersonFactory"/>
+
+
+
+    <!--factory bean 实例化-->
+
+    <bean id="factoryPersonBean" class="org.haoxd.spring.beans.factory.PersonFactoryBean"/>
+</beans>

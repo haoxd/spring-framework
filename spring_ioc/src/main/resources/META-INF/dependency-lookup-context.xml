@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="org.haoxd.spring.ioc.beans.User">
+
+        <property name="userId" value="123"></property>
+        <property name="userName" value="haoxd"></property>
+    </bean>
+
+
+    <bean id="superUser" class="org.haoxd.spring.ioc.beans.SuperUser" parent="user" primary="true">
+        <property name="address" value="beij"></property>
+    </bean>
+
+
+    <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+        <property name="targetBeanName" value="user"></property>
+    </bean>
+</beans>
