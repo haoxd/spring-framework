@@ -10,6 +10,7 @@
     <modules>
         <module>spring_beans</module>
         <module>spring_ioc</module>
+        <module>dependency_look</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -82,7 +83,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
         </dependency>
-
 
 
     </dependencies>

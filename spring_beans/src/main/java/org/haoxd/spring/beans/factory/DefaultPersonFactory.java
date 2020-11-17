@@ -32,8 +32,6 @@ public class DefaultPersonFactory implements PersonFactory ,InitializingBean,Dis
 
 
     //销毁
-
-
     @PreDestroy
     public void PreDestroy() {
         System.out.println("  基于@PreDestroy注解  DefaultPersonFactory 销毁中");
