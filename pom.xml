@@ -11,6 +11,7 @@
         <module>spring_beans</module>
         <module>spring_ioc</module>
         <module>dependency_look</module>
+        <module>aop_overview</module>
     </modules>
     <packaging>pom</packaging>
 

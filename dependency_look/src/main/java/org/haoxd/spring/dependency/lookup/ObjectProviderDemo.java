@@ -1,5 +1,6 @@
 package org.haoxd.spring.dependency.lookup;
 
+import org.haoxd.spring.ioc.beans.User;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -37,6 +38,7 @@ public class ObjectProviderDemo {
         //
         lookUpByObjectProvider(annotationConfigApplicationContext);
 
+        lookUpIfAvailable(annotationConfigApplicationContext);
 
         //关闭spring 上下文
         annotationConfigApplicationContext.close();
@@ -50,6 +52,16 @@ public class ObjectProviderDemo {
     @Bean
     public String helloWorld() {
         return "helrld";
+    }
+
+
+
+
+    private static void lookUpIfAvailable(AnnotationConfigApplicationContext annotationConfigApplicationContext) {
+
+        ObjectProvider<User> contextBeanProvider = annotationConfigApplicationContext.getBeanProvider(User.class);
+        User user =contextBeanProvider.getIfAvailable(User::createUser);
+        System.out.println(user);
     }
 
 

@@ -36,6 +36,10 @@ public class User {
         this.userId = userId;
         this.userName = userName;
     }
+    public static  User createUser(){
+
+        return new User(1,"ddd");
+    }
 
     @Override
     public String toString() {
