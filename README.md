@@ -35,6 +35,21 @@ spring bean
                 
 3 spring 容器是如何管理注册bean的？
 
+
+4 ObjectFactory 和BeanFactory的区别？    
+            
+        1 ObjectFactory 和BeanFactory 均提供依赖查找的能力。  
+        2 不过 ObjectFactory 仅关注一个或一种类型的bean依赖查找，而且自身是不具备依赖查找的能力，能力是由BeanFactory输出
+        3 BeanFactory 则提供了单一类型，集合类型以及层次性等多种依赖查找的能力或者方式。
+        
+        
+5 BeanFactory.getBean操作是否线程安全？
+        操作是线程安全的，操作的过程当中会增加互斥锁。
+        DefaultListableBeanFactory#beanDefinitionMap是一个ConcurrentHashMap
+        操作的方法synchronized 锁住了beanDefinitionMap 
+        
+
+
                                
                                
                                
